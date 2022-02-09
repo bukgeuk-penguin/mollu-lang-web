@@ -29,7 +29,7 @@ const MainLayout = ({ children, title, className = "" }: props) => {
   return (
     <>
       <NextSeo title={title} />
-      <div className="h-full w-full bg-slate-100 overflow-y-scroll">
+      <div className="h-full w-full bg-slate-100 overflow-y-scroll scroll-smooth">
         <nav className="w-full flex justify-between shadow-sm bg-white px-6 md:px-12 py-2 fixed">
           <Link href="/" passHref>
             <a className="flex items-center gap-x-3">
@@ -43,7 +43,7 @@ const MainLayout = ({ children, title, className = "" }: props) => {
             <NavItem name="플레이그라운드" path="/playground" />
           </div>
         </nav>
-        <div className={classNames("mt-16", className)}>{children}</div>
+        <div className={classNames("mt-16 mb-4", className)}>{children}</div>
       </div>
     </>
   );

@@ -1,3 +1,4 @@
+import Toc from "components/Toc";
 import MainLayout from "layouts/MainLayout";
 import type { GetStaticProps, NextPage } from "next";
 import { getPostBySlug, markdownToHtml } from "utils";
@@ -5,6 +6,7 @@ import { getPostBySlug, markdownToHtml } from "utils";
 type props = {
   post: {
     content: string;
+    md: string;
   };
 };
 
@@ -14,6 +16,7 @@ const Docs: NextPage<props> = (props) => {
       <div className="prose bg-white shadow-lg px-6 py-5">
         <div dangerouslySetInnerHTML={{ __html: props.post.content }}></div>
       </div>
+      <Toc content={props.post.md} />
     </MainLayout>
   );
 };
@@ -27,6 +30,7 @@ export const getStaticProps: GetStaticProps<props> = async ({ params }) => {
       post: {
         ...post,
         content,
+        md: post.content,
       },
     },
   };

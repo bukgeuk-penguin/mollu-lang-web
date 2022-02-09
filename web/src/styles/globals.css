@@ -2,8 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply bg-slate-100;
+}
+
 html,
 body,
 #__next {
   @apply h-full;
+}
+
+.prose h1::before,
+.prose h2::before,
+.prose h3::before {
+  display: block;
+  content: " ";
+  margin-top: -100px;
+  height: 100px;
+  visibility: hidden;
 }
