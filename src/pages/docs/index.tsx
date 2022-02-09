@@ -12,8 +12,11 @@ type props = {
 
 const Docs: NextPage<props> = (props) => {
   return (
-    <MainLayout title="문서 | 몰?랭" className="flex justify-center">
-      <div className="prose bg-white shadow-lg px-6 py-5">
+    <MainLayout
+      title="문서 | 몰?랭"
+      className="flex justify-center px-1 md:px-0"
+    >
+      <div className="prose bg-white shadow-lg px-6 py-5 w-full md:mx-0 md:w-auto">
         <div dangerouslySetInnerHTML={{ __html: props.post.content }}></div>
       </div>
       <Toc content={props.post.md} />

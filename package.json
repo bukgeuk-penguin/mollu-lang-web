@@ -15,6 +15,7 @@
     "gray-matter": "^4.0.3",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
+    "mollu-lang-web": "^1.0.4",
     "next": "12.0.10",
     "next-optimized-images": "^2.6.2",
     "next-seo": "^5.1.0",
