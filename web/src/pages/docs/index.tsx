@@ -1,12 +1,12 @@
 import MainLayout from "layouts/MainLayout";
 import type { NextPage } from "next";
 
-const Home: NextPage = () => {
+const Docs: NextPage = () => {
   return (
-    <MainLayout title="몰?루 프로그래밍 언어">
+    <MainLayout title="문서 | 몰?랭">
       <div></div>
     </MainLayout>
   );
 };
 
-export default Home;
+export default Docs;
