@@ -32,7 +32,7 @@ const Toc = ({ content }: Props) => {
     });
 
   return (
-    <div className={"hidden lg:block fixed py-16 right-10 w-1/5"}>
+    <div className={"hidden xl:block fixed py-16 right-10 w-1/5"}>
       <div className="border-l-2 pl-3">
         {/* <div className="font-bold text-gray-500">목차</div> */}
         <div className="">

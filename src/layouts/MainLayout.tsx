@@ -30,7 +30,7 @@ const MainLayout = ({ children, title, className = "" }: props) => {
     <>
       <NextSeo title={title} />
       <div className="h-full w-full bg-slate-100 overflow-y-scroll scroll-smooth">
-        <nav className="w-full flex justify-between shadow-sm bg-white px-6 md:px-12 py-2 fixed">
+        <nav className="w-full flex justify-between shadow-sm bg-white px-6 md:px-12 py-2 fixed z-10">
           <Link href="/" passHref>
             <a className="flex items-center gap-x-3">
               <Image src={Molu} alt="molu" width={32} height={32} />

@@ -1,7 +1,7 @@
 import Toc from "components/Toc";
 import MainLayout from "layouts/MainLayout";
 import type { GetStaticProps, NextPage } from "next";
-import { getPostBySlug, markdownToHtml } from "utils";
+import { markdownToHtml } from "utils";
 
 type props = {
   post: {
@@ -22,15 +22,17 @@ const Docs: NextPage<props> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<props> = async ({ params }) => {
-  const post = getPostBySlug("docs", ["slug", "content"]);
-  const content = await markdownToHtml(post.content || "");
+  const docs = await fetch(
+    "https://raw.githubusercontent.com/bukgeuk-penguin/mullu-lang/master/README.md"
+  );
+  const string = await docs.text();
+  const content = await markdownToHtml(string || "");
 
   return {
     props: {
       post: {
-        ...post,
         content,
-        md: post.content,
+        md: string,
       },
     },
   };
