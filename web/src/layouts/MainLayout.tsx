@@ -9,6 +9,7 @@ import classNames from "classnames";
 type props = {
   children: ReactNode;
   title: string;
+  className?: string;
 };
 
 const NavItem = ({ name, path }: { name: string; path: string }) => {
@@ -24,12 +25,12 @@ const NavItem = ({ name, path }: { name: string; path: string }) => {
   );
 };
 
-const MainLayout = ({ children, title }: props) => {
+const MainLayout = ({ children, title, className = "" }: props) => {
   return (
     <>
       <NextSeo title={title} />
-      <div className="h-full w-full bg-slate-100">
-        <nav className="w-full flex justify-between shadow-sm bg-white px-6 md:px-12 py-2">
+      <div className="h-full w-full bg-slate-100 overflow-y-scroll">
+        <nav className="w-full flex justify-between shadow-sm bg-white px-6 md:px-12 py-2 fixed">
           <Link href="/" passHref>
             <a className="flex items-center gap-x-3">
               <Image src={Molu} alt="molu" width={32} height={32} />
@@ -42,7 +43,7 @@ const MainLayout = ({ children, title }: props) => {
             <NavItem name="플레이그라운드" path="/playground" />
           </div>
         </nav>
-        <div className="">{children}</div>
+        <div className={classNames("mt-16", className)}>{children}</div>
       </div>
     </>
   );

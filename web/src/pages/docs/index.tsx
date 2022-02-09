@@ -1,12 +1,35 @@
 import MainLayout from "layouts/MainLayout";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
+import { getPostBySlug, markdownToHtml } from "utils";
 
-const Docs: NextPage = () => {
+type props = {
+  post: {
+    content: string;
+  };
+};
+
+const Docs: NextPage<props> = (props) => {
   return (
-    <MainLayout title="문서 | 몰?랭">
-      <div></div>
+    <MainLayout title="문서 | 몰?랭" className="flex justify-center">
+      <div className="prose bg-white shadow-lg px-6 py-5">
+        <div dangerouslySetInnerHTML={{ __html: props.post.content }}></div>
+      </div>
     </MainLayout>
   );
+};
+
+export const getStaticProps: GetStaticProps<props> = async ({ params }) => {
+  const post = getPostBySlug("docs", ["slug", "content"]);
+  const content = await markdownToHtml(post.content || "");
+
+  return {
+    props: {
+      post: {
+        ...post,
+        content,
+      },
+    },
+  };
 };
 
 export default Docs;
