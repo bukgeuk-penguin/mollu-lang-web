@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Molu from "../../public/molu.gif";
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
@@ -33,7 +32,12 @@ const MainLayout = ({ children, title, className = "" }: props) => {
         <nav className="w-full flex justify-between shadow-sm bg-white px-6 md:px-12 py-2 fixed z-10">
           <Link href="/" passHref>
             <a className="flex items-center gap-x-3">
-              <Image src={Molu} alt="molu" width={32} height={32} />
+              <img
+                src={require("../assets/molu.gif")}
+                alt="molu"
+                width={32}
+                height={32}
+              />
               <div className="text-lg font-bold">몰?랭</div>
             </a>
           </Link>

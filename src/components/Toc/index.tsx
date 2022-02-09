@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { useIntersectionObserver } from "hooks/useIntersectionObserver";
-import Link from "next/link";
 import { useState } from "react";
 
 interface Props {
