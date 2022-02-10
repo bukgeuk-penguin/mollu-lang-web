@@ -20,6 +20,9 @@ jobs:
           cache: "yarn"
       - run: yarn install
       - run: yarn run build
+        env:
+          NEXT_PUBLIC_UMAMI_WEB_ID: ${{ secrets.UMAMI_WEB_ID }}
+          NEXT_PUBLIC_UMAMI_SRC: ${{ secrets.UMAMI_SRC }}
       - run: yarn run export
         env:
           CI: true
