@@ -69,6 +69,7 @@ const Playground: NextPage = () => {
   return (
     <MainLayout
       title="플레이그라운드 | 몰?랭"
+      description="몰?루 프로그래밍 언어를 웹사이트에서 실행"
       className="container mx-auto px-4"
     >
       <div className="flex flex-col justify-center items-center">

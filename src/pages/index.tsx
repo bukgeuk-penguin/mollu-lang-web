@@ -5,7 +5,11 @@ import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
-    <MainLayout title="몰?루 프로그래밍 언어" className="px-4">
+    <MainLayout
+      title="몰?루 프로그래밍 언어"
+      description="블루아카이브의 몰?루밈을 보고 만들어진 난해한 프로그래밍 언어 입니다"
+      className="px-4"
+    >
       <div className="flex items-center justify-center h-full">
         <div className="text-center flex items-center flex-col transform -translate-y-12">
           <img

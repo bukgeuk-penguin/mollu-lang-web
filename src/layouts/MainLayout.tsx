@@ -8,6 +8,7 @@ import classNames from "classnames";
 type props = {
   children: ReactNode;
   title: string;
+  description?: string;
   className?: string;
 };
 
@@ -24,10 +25,30 @@ const NavItem = ({ name, path }: { name: string; path: string }) => {
   );
 };
 
-const MainLayout = ({ children, title, className = "" }: props) => {
+const MainLayout = ({
+  children,
+  title,
+  className = "",
+  description = "",
+}: props) => {
   return (
     <>
-      <NextSeo title={title} />
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{
+          type: "website",
+          locale: "ko_KR",
+          url: "https://mollu.gangjun.dev",
+          images: [{ url: "https://mollu.gangjun.dev/molu.gif", alt: "몰?루" }],
+          site_name: "몰?랭",
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
+        }}
+      />
       <div className="h-full w-full bg-slate-100 overflow-y-scroll scroll-smooth flex flex-col">
         <nav className="w-full flex justify-between shadow-sm bg-white px-6 md:px-12 py-2 fixed z-10">
           <Link href="/" passHref>
