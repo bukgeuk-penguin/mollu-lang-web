@@ -2,9 +2,14 @@ import AceEditor from "react-ace";
 import Select from "react-select";
 
 import "ace-builds/src-noconflict/mode-text";
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/theme-mono_industrial";
+import "utils/mode";
+import "ace-builds/src-noconflict/theme-clouds";
+import "ace-builds/src-noconflict/theme-xcode";
+import "ace-builds/src-noconflict/theme-solarized_light";
 import "ace-builds/src-noconflict/theme-monokai";
+import "ace-builds/src-noconflict/theme-ambiance";
+import "ace-builds/src-noconflict/theme-nord_dark";
+import "ace-builds/src-noconflict/theme-one_dark";
 import { Dispatch, SetStateAction, useState } from "react";
 
 const options = [
@@ -12,13 +17,16 @@ const options = [
   { value: "mol_ru.mol", label: "몰?루" },
   { value: "a-z.mol", label: "A-Z출력" },
   { value: "star2.mol", label: "별찍기" },
-  { value: "fibonacci.mol", label: "피보나치 수열" },
 ];
 const options2 = [
   { value: "textarea", label: "텍스트 입력" },
-  { value: "github", label: "에디터-테마1" },
-  { value: "mono_industrial", label: "에디터-테마2" },
-  { value: "monokai", label: "에디터-테마3" },
+  { value: "clouds", label: "에디터 clouds" },
+  { value: "xcode", label: "에디터 xcode" },
+  { value: "solarized_light", label: "에디터 solarized_light" },
+  { value: "ambiance", label: "에디터 ambiance" },
+  { value: "nord_dark", label: "에디터 nord_dark" },
+  { value: "monokai", label: "에디터 monokai" },
+  { value: "one_dark", label: "에디터 one_dark" },
 ];
 
 type props = {
@@ -66,13 +74,16 @@ const Editor = ({ code, setCode }: props) => {
         ) : (
           <AceEditor
             placeholder="우측상단에서 예제를 선택하여 보세요!"
-            mode="text"
+            mode="mol"
             theme={editor}
             name="asdf"
             fontSize={14}
             value={code}
             onChange={(code) => setCode(code)}
             showPrintMargin={false}
+            enableLiveAutocompletion={false}
+            enableBasicAutocompletion={false}
+            enableSnippets={false}
             showGutter={true}
             highlightActiveLine={true}
             width={"100%"}
