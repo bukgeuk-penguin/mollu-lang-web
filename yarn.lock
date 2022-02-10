@@ -3465,7 +3465,7 @@ mixin-deep@^1.2.0:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
 
-mollu-lang-web@^1.0.4:
+mollu-lang-web@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/mollu-lang-web/-/mollu-lang-web-1.1.0.tgz#07f912838eeec45dbd15d5ade9766ba34f488719"
   integrity sha512-tYbexDyDdrikE7qtdhyFS+7lDtNbosewtOd38AksCMHIVKM03Fv71D1hsMDQ1thEFFoztrwT/B3ufmvsy9lzfg==
