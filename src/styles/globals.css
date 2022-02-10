@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,4 +22,8 @@ body,
   margin-top: -100px;
   height: 100px;
   visibility: hidden;
+}
+
+.playground-editor {
+  font-family: "Noto Sans KR", sans-serif;
 }

@@ -43,7 +43,6 @@ const MainLayout = ({ children, title, className = "" }: props) => {
           </Link>
           <div className="flex gap-x-5 items-center">
             <NavItem name="문서" path="/docs" />
-            <NavItem name="예제" path="/example" />
             <NavItem name="플레이그라운드" path="/playground" />
           </div>
         </nav>
